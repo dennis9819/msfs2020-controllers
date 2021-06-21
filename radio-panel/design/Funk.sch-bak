@@ -1,0 +1,1956 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L mcp_panel:Alps_EC11 ENC1
+U 1 1 60CFBA69
+P 12000 5700
+F 0 "ENC1" H 11975 6265 50  0000 C CNN
+F 1 "Alps_EC11" H 11975 6174 50  0000 C CNN
+F 2 "mcp_panel:dual_EC11_SW" H 12100 5550 50  0001 C CNN
+F 3 "" H 12100 5550 50  0001 C CNN
+	1    12000 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L mcp_panel:Alps_EC11 ENC2
+U 1 1 60CFCBE4
+P 12000 6850
+F 0 "ENC2" H 11975 7415 50  0000 C CNN
+F 1 "Alps_EC11" H 11975 7324 50  0000 C CNN
+F 2 "mcp_panel:dual_EC11_SW" H 12100 6700 50  0001 C CNN
+F 3 "" H 12100 6700 50  0001 C CNN
+	1    12000 6850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Display_Character:CC56-12SRWA SEG1
+U 1 1 60D01687
+P 3000 2850
+F 0 "SEG1" H 3000 3517 50  0000 C CNN
+F 1 "CC56-12SRWA" H 3000 3426 50  0000 C CNN
+F 2 "TS5:7seg-056" H 3000 2250 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 2570 2880 50  0001 C CNN
+	1    3000 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74AHC595 IC2
+U 1 1 60D204E4
+P 1400 2100
+F 0 "IC2" V 1354 2744 50  0000 L CNN
+F 1 "74AHC595" V 1445 2744 50  0000 L CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 1400 2100 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 1400 2100 50  0001 C CNN
+	1    1400 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1800 2500 1800 2550
+Wire Wire Line
+	1800 2550 1900 2550
+Wire Wire Line
+	1800 2550 1800 3600
+Wire Wire Line
+	1800 3600 1900 3600
+Connection ~ 1800 2550
+Wire Wire Line
+	1700 2650 1900 2650
+Wire Wire Line
+	1700 2650 1700 3700
+Wire Wire Line
+	1700 3700 1900 3700
+Connection ~ 1700 2650
+Wire Wire Line
+	1600 2500 1600 2750
+Wire Wire Line
+	1600 2750 1900 2750
+Wire Wire Line
+	1600 2750 1600 3800
+Wire Wire Line
+	1600 3800 1900 3800
+Connection ~ 1600 2750
+Wire Wire Line
+	1500 2500 1500 2850
+Wire Wire Line
+	1500 2850 1900 2850
+Wire Wire Line
+	1500 2850 1500 3900
+Wire Wire Line
+	1500 3900 1900 3900
+Connection ~ 1500 2850
+Wire Wire Line
+	1400 2500 1400 2950
+Wire Wire Line
+	1400 2950 1900 2950
+Wire Wire Line
+	1400 2950 1400 4000
+Wire Wire Line
+	1400 4000 1900 4000
+Connection ~ 1400 2950
+Wire Wire Line
+	1300 2500 1300 3050
+Wire Wire Line
+	1300 3050 1900 3050
+Wire Wire Line
+	1300 3050 1300 4100
+Wire Wire Line
+	1300 4100 1900 4100
+Connection ~ 1300 3050
+Wire Wire Line
+	1200 2500 1200 3150
+Wire Wire Line
+	1200 3150 1900 3150
+Wire Wire Line
+	1200 3150 1200 4200
+Wire Wire Line
+	1200 4200 1900 4200
+Connection ~ 1200 3150
+Wire Wire Line
+	1100 2500 1100 3250
+Wire Wire Line
+	1100 3250 1900 3250
+Wire Wire Line
+	1100 3250 1100 4300
+Wire Wire Line
+	1100 4300 1900 4300
+Connection ~ 1100 3250
+$Comp
+L Display_Character:CC56-12SRWA SEG2
+U 1 1 60D05C22
+P 3000 3900
+F 0 "SEG2" H 3000 4567 50  0000 C CNN
+F 1 "TS5:7seg-056" H 3000 4476 50  0000 C CNN
+F 2 "TS5:7seg-056" H 3000 3300 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 2570 3930 50  0001 C CNN
+	1    3000 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Display_Character:CC56-12SRWA SEG5
+U 1 1 60D4B9F5
+P 3000 6950
+F 0 "SEG5" H 3000 7617 50  0000 C CNN
+F 1 "CC56-12SRWA" H 3000 7526 50  0000 C CNN
+F 2 "TS5:7seg-056" H 3000 6350 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 2570 6980 50  0001 C CNN
+	1    3000 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74AHC595 U1
+U 1 1 60D4B9FB
+P 1400 6200
+F 0 "U1" V 1354 6844 50  0000 L CNN
+F 1 "74AHC595" V 1445 6844 50  0000 L CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 1400 6200 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 1400 6200 50  0001 C CNN
+	1    1400 6200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1800 6600 1800 6650
+Wire Wire Line
+	1800 6650 1900 6650
+Wire Wire Line
+	1800 6650 1800 7700
+Wire Wire Line
+	1800 7700 1900 7700
+Connection ~ 1800 6650
+Wire Wire Line
+	1700 6600 1700 6750
+Wire Wire Line
+	1700 6750 1900 6750
+Wire Wire Line
+	1700 6750 1700 7800
+Wire Wire Line
+	1700 7800 1900 7800
+Connection ~ 1700 6750
+Wire Wire Line
+	1600 6600 1600 6850
+Wire Wire Line
+	1600 6850 1900 6850
+Wire Wire Line
+	1600 6850 1600 7900
+Wire Wire Line
+	1600 7900 1900 7900
+Connection ~ 1600 6850
+Wire Wire Line
+	1500 6600 1500 6950
+Wire Wire Line
+	1500 6950 1900 6950
+Wire Wire Line
+	1500 6950 1500 8000
+Wire Wire Line
+	1500 8000 1900 8000
+Connection ~ 1500 6950
+Wire Wire Line
+	1400 6600 1400 7050
+Wire Wire Line
+	1400 7050 1900 7050
+Wire Wire Line
+	1400 7050 1400 8100
+Wire Wire Line
+	1400 8100 1900 8100
+Connection ~ 1400 7050
+Wire Wire Line
+	1300 6600 1300 7150
+Wire Wire Line
+	1300 7150 1900 7150
+Wire Wire Line
+	1300 7150 1300 8200
+Wire Wire Line
+	1300 8200 1900 8200
+Connection ~ 1300 7150
+Wire Wire Line
+	1200 6600 1200 7250
+Wire Wire Line
+	1200 7250 1900 7250
+Wire Wire Line
+	1200 7250 1200 8300
+Wire Wire Line
+	1200 8300 1900 8300
+Connection ~ 1200 7250
+Wire Wire Line
+	1100 6600 1100 7350
+Wire Wire Line
+	1100 7350 1900 7350
+Wire Wire Line
+	1100 7350 1100 8400
+Wire Wire Line
+	1100 8400 1900 8400
+Connection ~ 1100 7350
+$Comp
+L Display_Character:CC56-12SRWA SEG7
+U 1 1 60D4BA29
+P 3000 8000
+F 0 "SEG7" H 3000 8667 50  0000 C CNN
+F 1 "CC56-12SRWA" H 3000 8576 50  0000 C CNN
+F 2 "TS5:7seg-056" H 3000 7400 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 2570 8030 50  0001 C CNN
+	1    3000 8000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Display_Character:CC56-12SRWA SEG3
+U 1 1 60D53398
+P 7600 2850
+F 0 "SEG3" H 7600 3517 50  0000 C CNN
+F 1 "TS5:7seg-056" H 7600 3426 50  0000 C CNN
+F 2 "TS5:7seg-056" H 7600 2250 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 7170 2880 50  0001 C CNN
+	1    7600 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74AHC595 IC3
+U 1 1 60D5339E
+P 6000 2100
+F 0 "IC3" V 5954 2744 50  0000 L CNN
+F 1 "74AHC595" V 6045 2744 50  0000 L CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 6000 2100 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 6000 2100 50  0001 C CNN
+	1    6000 2100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6400 2500 6400 2550
+Wire Wire Line
+	6400 2550 6500 2550
+Wire Wire Line
+	6400 2550 6400 3600
+Wire Wire Line
+	6400 3600 6500 3600
+Connection ~ 6400 2550
+Wire Wire Line
+	6300 2500 6300 2650
+Wire Wire Line
+	6300 2650 6500 2650
+Wire Wire Line
+	6300 2650 6300 3700
+Wire Wire Line
+	6300 3700 6500 3700
+Connection ~ 6300 2650
+Wire Wire Line
+	6200 2500 6200 2750
+Wire Wire Line
+	6200 2750 6500 2750
+Wire Wire Line
+	6200 2750 6200 3800
+Wire Wire Line
+	6200 3800 6500 3800
+Connection ~ 6200 2750
+Wire Wire Line
+	6100 2500 6100 2850
+Wire Wire Line
+	6100 2850 6500 2850
+Wire Wire Line
+	6100 2850 6100 3900
+Wire Wire Line
+	6100 3900 6500 3900
+Connection ~ 6100 2850
+Wire Wire Line
+	6000 2500 6000 2950
+Wire Wire Line
+	6000 2950 6500 2950
+Wire Wire Line
+	6000 2950 6000 4000
+Wire Wire Line
+	6000 4000 6500 4000
+Connection ~ 6000 2950
+Wire Wire Line
+	5900 2500 5900 3050
+Wire Wire Line
+	5900 3050 6500 3050
+Wire Wire Line
+	5900 3050 5900 4100
+Wire Wire Line
+	5900 4100 6500 4100
+Connection ~ 5900 3050
+Wire Wire Line
+	5800 2500 5800 3150
+Wire Wire Line
+	5800 3150 6500 3150
+Wire Wire Line
+	5800 3150 5800 4200
+Wire Wire Line
+	5800 4200 6500 4200
+Connection ~ 5800 3150
+Wire Wire Line
+	5700 2500 5700 3250
+Wire Wire Line
+	5700 3250 6500 3250
+Wire Wire Line
+	5700 3250 5700 4300
+Wire Wire Line
+	5700 4300 6500 4300
+Connection ~ 5700 3250
+$Comp
+L Display_Character:CC56-12SRWA SEG4
+U 1 1 60D533CC
+P 7600 3900
+F 0 "SEG4" H 7600 4567 50  0000 C CNN
+F 1 "TS5:7seg-056" H 7600 4476 50  0000 C CNN
+F 2 "TS5:7seg-056" H 7600 3300 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 7170 3930 50  0001 C CNN
+	1    7600 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Display_Character:CC56-12SRWA SEG6
+U 1 1 60D5A3D1
+P 7600 6950
+F 0 "SEG6" H 7600 7617 50  0000 C CNN
+F 1 "CC56-12SRWA" H 7600 7526 50  0000 C CNN
+F 2 "TS5:7seg-056" H 7600 6350 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 7170 6980 50  0001 C CNN
+	1    7600 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74AHC595 IC4
+U 1 1 60D5A3D7
+P 6000 6200
+F 0 "IC4" V 5954 6844 50  0000 L CNN
+F 1 "74AHC595" V 6045 6844 50  0000 L CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 6000 6200 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 6000 6200 50  0001 C CNN
+	1    6000 6200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6400 6600 6400 6650
+Wire Wire Line
+	6400 6650 6500 6650
+Wire Wire Line
+	6400 6650 6400 7700
+Wire Wire Line
+	6400 7700 6500 7700
+Connection ~ 6400 6650
+Wire Wire Line
+	6300 6600 6300 6750
+Wire Wire Line
+	6300 6750 6500 6750
+Wire Wire Line
+	6300 6750 6300 7800
+Wire Wire Line
+	6300 7800 6500 7800
+Connection ~ 6300 6750
+Wire Wire Line
+	6200 6600 6200 6850
+Wire Wire Line
+	6200 6850 6500 6850
+Wire Wire Line
+	6200 6850 6200 7900
+Wire Wire Line
+	6200 7900 6500 7900
+Connection ~ 6200 6850
+Wire Wire Line
+	6100 6600 6100 6950
+Wire Wire Line
+	6100 6950 6500 6950
+Wire Wire Line
+	6100 6950 6100 8000
+Wire Wire Line
+	6100 8000 6500 8000
+Connection ~ 6100 6950
+Wire Wire Line
+	6000 6600 6000 7050
+Wire Wire Line
+	6000 7050 6500 7050
+Wire Wire Line
+	6000 7050 6000 8100
+Wire Wire Line
+	6000 8100 6500 8100
+Connection ~ 6000 7050
+Wire Wire Line
+	5900 6600 5900 7150
+Wire Wire Line
+	5900 7150 6500 7150
+Wire Wire Line
+	5900 7150 5900 8200
+Wire Wire Line
+	5900 8200 6500 8200
+Connection ~ 5900 7150
+Wire Wire Line
+	5800 6600 5800 7250
+Wire Wire Line
+	5800 7250 6500 7250
+Wire Wire Line
+	5800 7250 5800 8300
+Wire Wire Line
+	5800 8300 6500 8300
+Connection ~ 5800 7250
+Wire Wire Line
+	5700 6600 5700 7350
+Wire Wire Line
+	5700 7350 6500 7350
+Wire Wire Line
+	5700 7350 5700 8400
+Wire Wire Line
+	5700 8400 6500 8400
+Connection ~ 5700 7350
+$Comp
+L Display_Character:CC56-12SRWA SEG8
+U 1 1 60D5A405
+P 7600 8000
+F 0 "SEG8" H 7600 8667 50  0000 C CNN
+F 1 "CC56-12SRWA" H 7600 8576 50  0000 C CNN
+F 2 "TS5:7seg-056" H 7600 7400 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 7170 8030 50  0001 C CNN
+	1    7600 8000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_Array:ULN2803A IC6
+U 1 1 60D65367
+P 3700 9150
+F 0 "IC6" H 3700 9717 50  0000 C CNN
+F 1 "ULN2803A" H 3700 9626 50  0000 C CNN
+F 2 "Package_DIP:DIP-18_W7.62mm_Socket_LongPads" H 3750 8500 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/uln2803a.pdf" H 3800 8950 50  0001 C CNN
+	1    3700 9150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 7050 4200 7050
+Wire Wire Line
+	4200 7050 4200 8950
+Wire Wire Line
+	4200 8950 4100 8950
+Wire Wire Line
+	4100 7150 4300 7150
+Wire Wire Line
+	4300 7150 4300 9050
+Wire Wire Line
+	4300 9050 4100 9050
+Wire Wire Line
+	4100 7250 4400 7250
+Wire Wire Line
+	4400 7250 4400 9150
+Wire Wire Line
+	4400 9150 4100 9150
+Wire Wire Line
+	4100 7350 4500 7350
+Wire Wire Line
+	4500 7350 4500 9250
+Wire Wire Line
+	4500 9250 4100 9250
+Wire Wire Line
+	4100 8100 4600 8100
+Wire Wire Line
+	4600 8100 4600 9350
+Wire Wire Line
+	4600 9350 4100 9350
+Wire Wire Line
+	4100 8200 4700 8200
+Wire Wire Line
+	4700 8200 4700 9450
+Wire Wire Line
+	4700 9450 4100 9450
+Wire Wire Line
+	4100 8300 4800 8300
+Wire Wire Line
+	4800 9550 4100 9550
+Wire Wire Line
+	4100 8400 4900 8400
+Wire Wire Line
+	4900 8400 4900 9650
+Wire Wire Line
+	4900 9650 4100 9650
+Wire Wire Line
+	4100 2950 4200 2950
+Wire Wire Line
+	4200 2950 4200 7050
+Connection ~ 4200 7050
+Wire Wire Line
+	4100 3050 4300 3050
+Wire Wire Line
+	4300 3050 4300 7150
+Connection ~ 4300 7150
+Wire Wire Line
+	4100 3150 4400 3150
+Wire Wire Line
+	4400 3150 4400 7250
+Connection ~ 4400 7250
+Wire Wire Line
+	4100 3250 4500 3250
+Wire Wire Line
+	4500 3250 4500 7350
+Connection ~ 4500 7350
+Wire Wire Line
+	4100 4000 4600 4000
+Wire Wire Line
+	4600 4000 4600 8100
+Connection ~ 4600 8100
+Wire Wire Line
+	4100 4100 4700 4100
+Wire Wire Line
+	4700 4100 4700 8200
+Connection ~ 4700 8200
+Wire Wire Line
+	4100 4200 4800 4200
+Wire Wire Line
+	4800 4200 4800 8300
+Connection ~ 4800 8300
+Wire Wire Line
+	4100 4300 4900 4300
+Wire Wire Line
+	4900 4300 4900 8400
+Connection ~ 4900 8400
+Wire Wire Line
+	8700 7050 8800 7050
+Wire Wire Line
+	8800 7050 8800 8950
+Wire Wire Line
+	8700 7150 8900 7150
+Wire Wire Line
+	8900 7150 8900 9050
+Wire Wire Line
+	8700 7250 9000 7250
+Wire Wire Line
+	9000 7250 9000 9150
+Wire Wire Line
+	8700 7350 9100 7350
+Wire Wire Line
+	9100 7350 9100 9250
+Wire Wire Line
+	8700 8100 9200 8100
+Wire Wire Line
+	9200 8100 9200 9350
+Wire Wire Line
+	8700 8200 9300 8200
+Wire Wire Line
+	9300 8200 9300 9450
+Wire Wire Line
+	8700 8300 9400 8300
+Wire Wire Line
+	9400 8300 9400 9550
+Wire Wire Line
+	8700 8400 9500 8400
+Wire Wire Line
+	9500 8400 9500 9650
+Wire Wire Line
+	8700 2950 8800 2950
+Wire Wire Line
+	8800 2950 8800 7050
+Connection ~ 8800 7050
+Wire Wire Line
+	8700 3050 8900 3050
+Wire Wire Line
+	8900 3050 8900 7150
+Connection ~ 8900 7150
+Wire Wire Line
+	8700 3150 9000 3150
+Wire Wire Line
+	9000 3150 9000 7250
+Connection ~ 9000 7250
+Wire Wire Line
+	8700 3250 9100 3250
+Wire Wire Line
+	9100 3250 9100 7350
+Connection ~ 9100 7350
+Wire Wire Line
+	8700 4000 9200 4000
+Wire Wire Line
+	9200 4000 9200 8100
+Connection ~ 9200 8100
+Wire Wire Line
+	8700 4100 9300 4100
+Wire Wire Line
+	9300 4100 9300 8200
+Connection ~ 9300 8200
+Wire Wire Line
+	8700 4200 9400 4200
+Wire Wire Line
+	9400 4200 9400 8300
+Connection ~ 9400 8300
+Wire Wire Line
+	8700 4300 9500 4300
+Wire Wire Line
+	9500 4300 9500 8400
+Connection ~ 9500 8400
+Wire Wire Line
+	4200 8950 8800 8950
+Connection ~ 4200 8950
+Wire Wire Line
+	4300 9050 8900 9050
+Connection ~ 4300 9050
+Wire Wire Line
+	4400 9150 9000 9150
+Connection ~ 4400 9150
+Wire Wire Line
+	4500 9250 9100 9250
+Connection ~ 4500 9250
+Wire Wire Line
+	4600 9350 9200 9350
+Connection ~ 4600 9350
+Wire Wire Line
+	4700 9450 9300 9450
+Connection ~ 4700 9450
+Wire Wire Line
+	4800 8300 4800 9550
+Wire Wire Line
+	4800 9550 9400 9550
+Connection ~ 4800 9550
+Wire Wire Line
+	4900 9650 9500 9650
+Connection ~ 4900 9650
+$Comp
+L 74xx:74AHC595 IC1
+U 1 1 60E63FBA
+P 1700 9200
+F 0 "IC1" H 1700 9981 50  0000 C CNN
+F 1 "74AHC595" H 1700 9890 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 1700 9200 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 1700 9200 50  0001 C CNN
+	1    1700 9200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 8800 3200 8800
+Wire Wire Line
+	3200 8800 3200 8950
+Wire Wire Line
+	3200 8950 3300 8950
+Wire Wire Line
+	2100 8900 3100 8900
+Wire Wire Line
+	3100 8900 3100 9050
+Wire Wire Line
+	3100 9050 3300 9050
+Wire Wire Line
+	2100 9000 3000 9000
+Wire Wire Line
+	3000 9000 3000 9150
+Wire Wire Line
+	3000 9150 3300 9150
+Wire Wire Line
+	2100 9100 2900 9100
+Wire Wire Line
+	2900 9100 2900 9250
+Wire Wire Line
+	2900 9250 3300 9250
+Wire Wire Line
+	2100 9200 2800 9200
+Wire Wire Line
+	2800 9200 2800 9350
+Wire Wire Line
+	2800 9350 3300 9350
+Wire Wire Line
+	2100 9300 2700 9300
+Wire Wire Line
+	2700 9300 2700 9450
+Wire Wire Line
+	2700 9450 3300 9450
+Wire Wire Line
+	2100 9400 2600 9400
+Wire Wire Line
+	2600 9400 2600 9550
+Wire Wire Line
+	2600 9550 3300 9550
+Wire Wire Line
+	2100 9500 2500 9500
+Wire Wire Line
+	2500 9500 2500 9650
+Wire Wire Line
+	2500 9650 3300 9650
+Wire Wire Line
+	1700 2500 1700 2650
+$Comp
+L ts5:TS5 SW2
+U 1 1 61027301
+P 10250 2800
+F 0 "SW2" H 10250 3135 50  0000 C CNN
+F 1 "TS5" H 10250 3044 50  0000 C CNN
+F 2 "TS5:TS5" H 10350 2500 50  0001 C CNN
+F 3 "" H 10350 2500 50  0001 C CNN
+	1    10250 2800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L ts5:TS5 SW3
+U 1 1 61036906
+P 10250 3450
+F 0 "SW3" H 10250 3785 50  0000 C CNN
+F 1 "TS5" H 10250 3694 50  0000 C CNN
+F 2 "TS5:TS5" H 10350 3150 50  0001 C CNN
+F 3 "" H 10350 3150 50  0001 C CNN
+	1    10250 3450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 74xx:74AHC595 IC5
+U 1 1 6109C26D
+P 8650 1350
+F 0 "IC5" H 8650 2131 50  0000 C CNN
+F 1 "74AHC595" H 8650 2040 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm_LongPads" H 8650 1350 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/74AHC_AHCT595.pdf" H 8650 1350 50  0001 C CNN
+	1    8650 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 3400 10600 3400
+Wire Wire Line
+	10450 2750 10600 2750
+Wire Wire Line
+	10450 2100 10600 2100
+Connection ~ 11100 2750
+Wire Wire Line
+	11100 2100 11100 2750
+Wire Wire Line
+	10900 2100 11100 2100
+Connection ~ 11100 3400
+Wire Wire Line
+	11100 2750 11100 3400
+Wire Wire Line
+	10900 2750 11100 2750
+Wire Wire Line
+	10900 3400 11100 3400
+$Comp
+L Diode:1N4148 D3
+U 1 1 6103690C
+P 10750 3400
+F 0 "D3" H 10750 3183 50  0000 C CNN
+F 1 "1N4148" H 10750 3274 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10750 3225 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 10750 3400 50  0001 C CNN
+	1    10750 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D2
+U 1 1 61027307
+P 10750 2750
+F 0 "D2" H 10750 2533 50  0000 C CNN
+F 1 "1N4148" H 10750 2624 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10750 2575 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 10750 2750 50  0001 C CNN
+	1    10750 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D1
+U 1 1 60FF6F75
+P 10750 2100
+F 0 "D1" H 10750 1883 50  0000 C CNN
+F 1 "1N4148" H 10750 1974 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10750 1925 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 10750 2100 50  0001 C CNN
+	1    10750 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L ts5:TS5 SW1
+U 1 1 60F99132
+P 10250 2150
+F 0 "SW1" H 10250 2485 50  0000 C CNN
+F 1 "TS5" H 10250 2394 50  0000 C CNN
+F 2 "TS5:TS5" H 10350 1850 50  0001 C CNN
+F 3 "" H 10350 1850 50  0001 C CNN
+	1    10250 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 950  9950 950 
+Wire Wire Line
+	9950 950  9950 2100
+Wire Wire Line
+	9950 2100 10050 2100
+Wire Wire Line
+	9050 1050 9850 1050
+Wire Wire Line
+	9850 1050 9850 2750
+Wire Wire Line
+	9850 2750 10050 2750
+Wire Wire Line
+	9050 1150 9750 1150
+Wire Wire Line
+	9750 1150 9750 3400
+Wire Wire Line
+	9750 3400 10050 3400
+$Comp
+L ts5:TS5 SW5
+U 1 1 6118AF65
+P 12100 2800
+F 0 "SW5" H 12100 3135 50  0000 C CNN
+F 1 "TS5" H 12100 3044 50  0000 C CNN
+F 2 "TS5:TS5" H 12200 2500 50  0001 C CNN
+F 3 "" H 12200 2500 50  0001 C CNN
+	1    12100 2800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12300 3400 12450 3400
+Wire Wire Line
+	12300 2750 12450 2750
+Wire Wire Line
+	12300 2100 12450 2100
+Connection ~ 12950 2750
+Wire Wire Line
+	12950 2100 12950 2750
+Wire Wire Line
+	12750 2100 12950 2100
+Connection ~ 12950 3400
+Wire Wire Line
+	12950 2750 12950 3400
+Wire Wire Line
+	12750 2750 12950 2750
+Wire Wire Line
+	12750 3400 12950 3400
+$Comp
+L Diode:1N4148 D6
+U 1 1 6118AF7C
+P 12600 3400
+F 0 "D6" H 12600 3183 50  0000 C CNN
+F 1 "1N4148" H 12600 3274 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 12600 3225 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 12600 3400 50  0001 C CNN
+	1    12600 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D5
+U 1 1 6118AF82
+P 12600 2750
+F 0 "D5" H 12600 2533 50  0000 C CNN
+F 1 "1N4148" H 12600 2624 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 12600 2575 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 12600 2750 50  0001 C CNN
+	1    12600 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D4
+U 1 1 6118AF88
+P 12600 2100
+F 0 "D4" H 12600 1883 50  0000 C CNN
+F 1 "1N4148" H 12600 1974 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 12600 1925 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 12600 2100 50  0001 C CNN
+	1    12600 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L ts5:TS5 SW4
+U 1 1 6118AF8E
+P 12100 2150
+F 0 "SW4" H 12100 2485 50  0000 C CNN
+F 1 "TS5" H 12100 2394 50  0000 C CNN
+F 2 "TS5:TS5" H 12200 1850 50  0001 C CNN
+F 3 "" H 12200 1850 50  0001 C CNN
+	1    12100 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11800 950  11800 2100
+Wire Wire Line
+	11800 2100 11900 2100
+Wire Wire Line
+	11700 1050 11700 2750
+Wire Wire Line
+	11700 2750 11900 2750
+Wire Wire Line
+	11600 1150 11600 3400
+Wire Wire Line
+	11600 3400 11900 3400
+Wire Wire Line
+	9950 950  11800 950 
+Connection ~ 9950 950 
+Wire Wire Line
+	9850 1050 11700 1050
+Connection ~ 9850 1050
+Wire Wire Line
+	9750 1150 11600 1150
+Connection ~ 9750 1150
+Wire Wire Line
+	9050 1450 9650 1450
+Wire Wire Line
+	9650 1450 9650 2300
+Wire Wire Line
+	9650 2300 10050 2300
+Wire Wire Line
+	9050 1550 9550 1550
+Wire Wire Line
+	9550 1550 9550 2950
+Wire Wire Line
+	9550 2950 10050 2950
+Wire Wire Line
+	9050 1650 9450 1650
+Wire Wire Line
+	9450 1650 9450 3600
+Wire Wire Line
+	9450 3600 10050 3600
+Wire Wire Line
+	9650 1450 11500 1450
+Wire Wire Line
+	11500 1450 11500 2300
+Wire Wire Line
+	11500 2300 11900 2300
+Connection ~ 9650 1450
+Wire Wire Line
+	9550 1550 11400 1550
+Wire Wire Line
+	11400 1550 11400 2950
+Wire Wire Line
+	11400 2950 11900 2950
+Connection ~ 9550 1550
+Wire Wire Line
+	9450 1650 11300 1650
+Wire Wire Line
+	11300 1650 11300 3600
+Wire Wire Line
+	11300 3600 11900 3600
+Connection ~ 9450 1650
+$Comp
+L ts5:TS5 SW8
+U 1 1 613DD326
+P 13950 2800
+F 0 "SW8" H 13950 3135 50  0000 C CNN
+F 1 "TS5" H 13950 3044 50  0000 C CNN
+F 2 "TS5:TS5" H 14050 2500 50  0001 C CNN
+F 3 "" H 14050 2500 50  0001 C CNN
+	1    13950 2800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L ts5:TS5 SW9
+U 1 1 613DD32C
+P 13950 3450
+F 0 "SW9" H 13950 3785 50  0000 C CNN
+F 1 "TS5" H 13950 3694 50  0000 C CNN
+F 2 "TS5:TS5" H 14050 3150 50  0001 C CNN
+F 3 "" H 14050 3150 50  0001 C CNN
+	1    13950 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	14150 3400 14300 3400
+Wire Wire Line
+	14150 2750 14300 2750
+Wire Wire Line
+	14150 2100 14300 2100
+Connection ~ 14800 2750
+Wire Wire Line
+	14800 2100 14800 2750
+Wire Wire Line
+	14600 2100 14800 2100
+Connection ~ 14800 3400
+Wire Wire Line
+	14800 2750 14800 3400
+Wire Wire Line
+	14600 2750 14800 2750
+Wire Wire Line
+	14600 3400 14800 3400
+$Comp
+L Diode:1N4148 D11
+U 1 1 613DD33D
+P 14450 3400
+F 0 "D11" H 14450 3183 50  0000 C CNN
+F 1 "1N4148" H 14450 3274 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 14450 3225 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 14450 3400 50  0001 C CNN
+	1    14450 3400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D10
+U 1 1 613DD343
+P 14450 2750
+F 0 "D10" H 14450 2533 50  0000 C CNN
+F 1 "1N4148" H 14450 2624 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 14450 2575 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 14450 2750 50  0001 C CNN
+	1    14450 2750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D9
+U 1 1 613DD349
+P 14450 2100
+F 0 "D9" H 14450 1883 50  0000 C CNN
+F 1 "1N4148" H 14450 1974 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 14450 1925 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 14450 2100 50  0001 C CNN
+	1    14450 2100
+	-1   0    0    1   
+$EndComp
+$Comp
+L ts5:TS5 SW7
+U 1 1 613DD34F
+P 13950 2150
+F 0 "SW7" H 13950 2485 50  0000 C CNN
+F 1 "TS5" H 13950 2394 50  0000 C CNN
+F 2 "TS5:TS5" H 14050 1850 50  0001 C CNN
+F 3 "" H 14050 1850 50  0001 C CNN
+	1    13950 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	13650 950  13650 2100
+Wire Wire Line
+	13650 2100 13750 2100
+Wire Wire Line
+	13550 1050 13550 2750
+Wire Wire Line
+	13550 2750 13750 2750
+Wire Wire Line
+	13450 1150 13450 3400
+Wire Wire Line
+	13450 3400 13750 3400
+Wire Wire Line
+	11800 950  13650 950 
+Wire Wire Line
+	11700 1050 13550 1050
+Wire Wire Line
+	11600 1150 13450 1150
+Wire Wire Line
+	11500 1450 13350 1450
+Wire Wire Line
+	13350 1450 13350 2300
+Wire Wire Line
+	13350 2300 13750 2300
+Wire Wire Line
+	11400 1550 13250 1550
+Wire Wire Line
+	13250 1550 13250 2950
+Wire Wire Line
+	13250 2950 13750 2950
+Wire Wire Line
+	11300 1650 13150 1650
+Wire Wire Line
+	13150 1650 13150 3600
+Wire Wire Line
+	13150 3600 13750 3600
+$Comp
+L Diode:1N4148 D7
+U 1 1 613F9802
+P 13200 5850
+F 0 "D7" H 13200 5633 50  0000 C CNN
+F 1 "1N4148" H 13200 5724 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 13200 5675 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 13200 5850 50  0001 C CNN
+	1    13200 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Diode:1N4148 D8
+U 1 1 613F9808
+P 13200 7000
+F 0 "D8" H 13200 6783 50  0000 C CNN
+F 1 "1N4148" H 13200 6874 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 13200 6825 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 13200 7000 50  0001 C CNN
+	1    13200 7000
+	-1   0    0    1   
+$EndComp
+$Comp
+L ts5:TS5 SW10
+U 1 1 613F980E
+P 15500 2150
+F 0 "SW10" H 15500 2485 50  0000 C CNN
+F 1 "TS5" H 15500 2394 50  0000 C CNN
+F 2 "TS5:TS5" H 15600 1850 50  0001 C CNN
+F 3 "" H 15600 1850 50  0001 C CNN
+	1    15500 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	15200 950  15200 2100
+Wire Wire Line
+	15200 2100 15300 2100
+Wire Wire Line
+	13650 950  15200 950 
+Wire Wire Line
+	13550 1050 15000 1050
+Wire Wire Line
+	13450 1150 14900 1150
+Wire Wire Line
+	13350 1450 15100 1450
+Wire Wire Line
+	15100 1450 15100 2300
+Wire Wire Line
+	15100 2300 15300 2300
+Wire Wire Line
+	10450 2200 10500 2200
+Wire Wire Line
+	10500 2200 10500 2950
+Wire Wire Line
+	10500 4000 9200 4000
+Connection ~ 9200 4000
+Wire Wire Line
+	10450 3600 10500 3600
+Connection ~ 10500 3600
+Wire Wire Line
+	10500 3600 10500 4000
+Wire Wire Line
+	10450 2950 10500 2950
+Connection ~ 10500 2950
+Wire Wire Line
+	10500 2950 10500 3600
+Wire Wire Line
+	12300 2200 12350 2200
+Wire Wire Line
+	12350 2200 12350 2950
+Wire Wire Line
+	12350 4100 9300 4100
+Connection ~ 9300 4100
+Wire Wire Line
+	12300 2950 12350 2950
+Connection ~ 12350 2950
+Wire Wire Line
+	12350 2950 12350 3600
+Wire Wire Line
+	12300 3600 12350 3600
+Connection ~ 12350 3600
+Wire Wire Line
+	12350 3600 12350 4100
+Wire Wire Line
+	14150 2300 14200 2300
+Wire Wire Line
+	14200 2300 14200 2950
+Wire Wire Line
+	14200 4200 9400 4200
+Connection ~ 9400 4200
+Wire Wire Line
+	14150 2950 14200 2950
+Connection ~ 14200 2950
+Wire Wire Line
+	14200 2950 14200 3600
+Wire Wire Line
+	14150 3600 14200 3600
+Connection ~ 14200 3600
+Wire Wire Line
+	14200 3600 14200 4200
+Connection ~ 11300 1650
+Connection ~ 11400 1550
+Connection ~ 11500 1450
+Connection ~ 11600 1150
+Connection ~ 11700 1050
+Connection ~ 11800 950 
+Connection ~ 13350 1450
+Connection ~ 13450 1150
+Connection ~ 13550 1050
+Connection ~ 13650 950 
+Connection ~ 9500 4300
+Wire Wire Line
+	14900 1150 14900 5550
+Wire Wire Line
+	14900 5550 12550 5550
+Wire Wire Line
+	15000 1050 15000 6700
+Wire Wire Line
+	15000 6700 12550 6700
+Wire Wire Line
+	12550 5850 13050 5850
+Wire Wire Line
+	12550 7000 13050 7000
+Wire Wire Line
+	15700 2300 15750 2300
+Wire Wire Line
+	15750 2300 15750 4300
+Wire Wire Line
+	15750 4300 9500 4300
+$Comp
+L Diode:1N4148 D12
+U 1 1 616D119D
+P 15650 4650
+F 0 "D12" H 15650 4867 50  0000 C CNN
+F 1 "1N4148" H 15650 4776 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 15650 4475 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 15650 4650 50  0001 C CNN
+	1    15650 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15700 2100 15850 2100
+Wire Wire Line
+	15850 2100 15850 4650
+Wire Wire Line
+	15850 4650 15800 4650
+$Comp
+L Connector_Generic:Conn_02x10_Odd_Even J1
+U 1 1 616F1461
+P 11800 8200
+F 0 "J1" H 11850 8817 50  0000 C CNN
+F 1 "Conn_02x09_Odd_Even" H 11850 8726 50  0000 C CNN
+F 2 "Connector_Multicomp:Multicomp_MC9A12-2034_2x10_P2.54mm_Vertical" H 11800 8200 50  0001 C CNN
+F 3 "~" H 11800 8200 50  0001 C CNN
+	1    11800 8200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11400 6950 11400 7800
+Wire Wire Line
+	11400 7800 11600 7800
+Wire Wire Line
+	11400 6750 11300 6750
+Wire Wire Line
+	11300 6750 11300 7900
+Wire Wire Line
+	11300 7900 11600 7900
+Wire Wire Line
+	11400 5800 11200 5800
+Wire Wire Line
+	11200 5800 11200 8000
+Wire Wire Line
+	11200 8000 11600 8000
+Wire Wire Line
+	11400 5600 11100 5600
+Wire Wire Line
+	11100 5600 11100 8100
+Wire Wire Line
+	11100 8100 11600 8100
+Wire Wire Line
+	12550 7150 12600 7150
+Wire Wire Line
+	12600 7150 12600 7800
+Wire Wire Line
+	12600 7800 12100 7800
+Wire Wire Line
+	12550 6550 12700 6550
+Wire Wire Line
+	12700 6550 12700 7900
+Wire Wire Line
+	12700 7900 12100 7900
+Wire Wire Line
+	12550 6000 12800 6000
+Wire Wire Line
+	12800 6000 12800 8000
+Wire Wire Line
+	12800 8000 12100 8000
+Wire Wire Line
+	12550 5400 12900 5400
+Wire Wire Line
+	12900 5400 12900 8100
+Wire Wire Line
+	12900 8100 12100 8100
+Wire Wire Line
+	15500 4650 13400 4650
+Wire Wire Line
+	13400 4650 13400 5850
+Wire Wire Line
+	13400 5850 13350 5850
+Wire Wire Line
+	13400 5850 13400 7000
+Wire Wire Line
+	13400 7000 13350 7000
+Connection ~ 13400 5850
+Wire Wire Line
+	13400 7000 13400 8200
+Wire Wire Line
+	13400 8200 12100 8200
+Connection ~ 13400 7000
+Text GLabel 11200 3800 2    50   Output ~ 0
+T-MUX0
+Text GLabel 13050 3800 2    50   Output ~ 0
+T-MUX1
+Text GLabel 14700 3800 0    50   Output ~ 0
+T-MUX2
+Wire Wire Line
+	11100 3800 11200 3800
+Wire Wire Line
+	11100 3400 11100 3800
+Wire Wire Line
+	12950 3800 13050 3800
+Wire Wire Line
+	12950 3400 12950 3800
+Wire Wire Line
+	14700 3800 14800 3800
+Wire Wire Line
+	14800 3400 14800 3800
+Text GLabel 12200 8500 2    50   Input ~ 0
+T-MUX0
+Text GLabel 12200 8400 2    50   Input ~ 0
+T-MUX1
+Text GLabel 12200 8300 2    50   Input ~ 0
+T-MUX2
+Wire Wire Line
+	12100 8300 12200 8300
+Wire Wire Line
+	12200 8400 12100 8400
+Wire Wire Line
+	12100 8500 12200 8500
+Text Label 12500 8200 2    50   ~ 0
+T-MUX3
+Text GLabel 11500 8200 0    50   Output ~ 0
+SDATA
+Text GLabel 11500 8300 0    50   Output ~ 0
+SDCLK
+Text GLabel 11500 8400 0    50   Output ~ 0
+LCLK
+Text GLabel 11000 8500 0    50   Output ~ 0
+RESET
+Wire Wire Line
+	11500 8200 11600 8200
+Wire Wire Line
+	11500 8300 11600 8300
+Wire Wire Line
+	11500 8400 11600 8400
+Wire Wire Line
+	11000 8500 11200 8500
+Text GLabel 1200 8800 0    50   Input ~ 0
+SDATA
+Text GLabel 1200 9000 0    50   Input ~ 0
+SDCLK
+Text GLabel 1200 9300 0    50   Input ~ 0
+LCLK
+Text GLabel 1200 9100 0    50   Input ~ 0
+RESET
+Wire Wire Line
+	1300 9400 1200 9400
+Wire Wire Line
+	1200 9400 1200 9950
+Wire Wire Line
+	1200 9950 1700 9950
+Wire Wire Line
+	1700 9950 1700 9900
+Wire Wire Line
+	1200 8800 1300 8800
+Wire Wire Line
+	1200 9000 1300 9000
+Wire Wire Line
+	1200 9100 1300 9100
+Wire Wire Line
+	1200 9300 1300 9300
+$Comp
+L power:+5V #PWR0101
+U 1 1 61B1318C
+P 1300 8600
+F 0 "#PWR0101" H 1300 8450 50  0001 C CNN
+F 1 "+5V" H 1315 8773 50  0000 C CNN
+F 2 "" H 1300 8600 50  0001 C CNN
+F 3 "" H 1300 8600 50  0001 C CNN
+	1    1300 8600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 61B143F6
+P 1700 10000
+F 0 "#PWR0102" H 1700 9750 50  0001 C CNN
+F 1 "GND" H 1705 9827 50  0000 C CNN
+F 2 "" H 1700 10000 50  0001 C CNN
+F 3 "" H 1700 10000 50  0001 C CNN
+	1    1700 10000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 8600 1700 8600
+Wire Wire Line
+	1700 10000 1700 9950
+Connection ~ 1700 9950
+$Comp
+L Device:C C1
+U 1 1 61B64E91
+P 1000 8600
+F 0 "C1" V 748 8600 50  0000 C CNN
+F 1 "100nF" V 839 8600 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 1038 8450 50  0001 C CNN
+F 3 "~" H 1000 8600 50  0001 C CNN
+	1    1000 8600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1300 8600 1150 8600
+Connection ~ 1300 8600
+Wire Wire Line
+	1200 9950 800  9950
+Wire Wire Line
+	800  9950 800  8600
+Wire Wire Line
+	800  8600 850  8600
+Connection ~ 1200 9950
+$Comp
+L power:GND #PWR0103
+U 1 1 61BB674A
+P 3700 9950
+F 0 "#PWR0103" H 3700 9700 50  0001 C CNN
+F 1 "GND" H 3705 9777 50  0000 C CNN
+F 2 "" H 3700 9950 50  0001 C CNN
+F 3 "" H 3700 9950 50  0001 C CNN
+	1    3700 9950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 9950 3700 9850
+Text GLabel 8150 1150 0    50   Input ~ 0
+SDCLK
+Text GLabel 8150 1450 0    50   Input ~ 0
+LCLK
+Text GLabel 8150 1250 0    50   Input ~ 0
+RESET
+Wire Wire Line
+	8250 1550 8150 1550
+Wire Wire Line
+	8150 1550 8150 2100
+Wire Wire Line
+	8150 2100 8650 2100
+Wire Wire Line
+	8650 2100 8650 2050
+Wire Wire Line
+	8150 950  8250 950 
+Wire Wire Line
+	8150 1150 8250 1150
+Wire Wire Line
+	8150 1250 8250 1250
+Wire Wire Line
+	8150 1450 8250 1450
+$Comp
+L power:+5V #PWR0106
+U 1 1 61C735FE
+P 8250 750
+F 0 "#PWR0106" H 8250 600 50  0001 C CNN
+F 1 "+5V" H 8265 923 50  0000 C CNN
+F 2 "" H 8250 750 50  0001 C CNN
+F 3 "" H 8250 750 50  0001 C CNN
+	1    8250 750 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 61C73604
+P 8650 2150
+F 0 "#PWR0107" H 8650 1900 50  0001 C CNN
+F 1 "GND" H 8655 1977 50  0000 C CNN
+F 2 "" H 8650 2150 50  0001 C CNN
+F 3 "" H 8650 2150 50  0001 C CNN
+	1    8650 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 750  8650 750 
+Wire Wire Line
+	8650 2150 8650 2100
+Connection ~ 8650 2100
+$Comp
+L Device:C C5
+U 1 1 61C7360D
+P 7950 750
+F 0 "C5" V 7698 750 50  0000 C CNN
+F 1 "100nF" V 7789 750 50  0000 C CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 7988 600 50  0001 C CNN
+F 3 "~" H 7950 750 50  0001 C CNN
+	1    7950 750 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8250 750  8100 750 
+Connection ~ 8250 750 
+Wire Wire Line
+	8150 2100 7750 2100
+Wire Wire Line
+	7750 750  7800 750 
+Connection ~ 8150 2100
+Wire Wire Line
+	7750 750  7750 2100
+Text GLabel 6200 1600 1    50   Input ~ 0
+SDCLK
+Text GLabel 5900 1600 1    50   Input ~ 0
+LCLK
+Text GLabel 6100 1600 1    50   Input ~ 0
+RESET
+Wire Wire Line
+	5800 1700 5800 1600
+Wire Wire Line
+	5800 1600 5250 1600
+Wire Wire Line
+	5250 1600 5250 2100
+Wire Wire Line
+	5250 2100 5300 2100
+Wire Wire Line
+	6400 1600 6400 1700
+Wire Wire Line
+	6200 1600 6200 1700
+Wire Wire Line
+	6100 1600 6100 1700
+Wire Wire Line
+	5900 1600 5900 1700
+$Comp
+L power:GND #PWR0108
+U 1 1 61CA571C
+P 5250 2200
+F 0 "#PWR0108" H 5250 1950 50  0001 C CNN
+F 1 "GND" H 5255 2027 50  0000 C CNN
+F 2 "" H 5250 2200 50  0001 C CNN
+F 3 "" H 5250 2200 50  0001 C CNN
+	1    5250 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 61CA5725
+P 6600 1400
+F 0 "C3" H 6485 1354 50  0000 R CNN
+F 1 "100nF" H 6485 1445 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 6638 1250 50  0001 C CNN
+F 3 "~" H 6600 1400 50  0001 C CNN
+	1    6600 1400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5250 1600 5250 1200
+Wire Wire Line
+	6600 1200 6600 1250
+Connection ~ 5250 1600
+Wire Wire Line
+	6600 1200 5250 1200
+Wire Wire Line
+	6600 1550 6600 2000
+$Comp
+L power:+5V #PWR0109
+U 1 1 61D741C8
+P 6700 1900
+F 0 "#PWR0109" H 6700 1750 50  0001 C CNN
+F 1 "+5V" H 6715 2073 50  0000 C CNN
+F 2 "" H 6700 1900 50  0001 C CNN
+F 3 "" H 6700 1900 50  0001 C CNN
+	1    6700 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1900 6700 2000
+Wire Wire Line
+	6700 2000 6600 2000
+Connection ~ 6600 2000
+Wire Wire Line
+	6600 2000 6600 2100
+Wire Wire Line
+	5250 2200 5250 2100
+Connection ~ 5250 2100
+Text GLabel 1600 1600 1    50   Input ~ 0
+SDCLK
+Text GLabel 1300 1600 1    50   Input ~ 0
+LCLK
+Text GLabel 1500 1600 1    50   Input ~ 0
+RESET
+Wire Wire Line
+	1200 1700 1200 1600
+Wire Wire Line
+	1200 1600 650  1600
+Wire Wire Line
+	650  1600 650  2100
+Wire Wire Line
+	650  2100 700  2100
+Wire Wire Line
+	1800 1600 1800 1700
+Wire Wire Line
+	1600 1600 1600 1700
+Wire Wire Line
+	1500 1600 1500 1700
+Wire Wire Line
+	1300 1600 1300 1700
+$Comp
+L power:GND #PWR0112
+U 1 1 61E18039
+P 650 2200
+F 0 "#PWR0112" H 650 1950 50  0001 C CNN
+F 1 "GND" H 655 2027 50  0000 C CNN
+F 2 "" H 650 2200 50  0001 C CNN
+F 3 "" H 650 2200 50  0001 C CNN
+	1    650  2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 61E1803F
+P 2000 1400
+F 0 "C2" H 1885 1354 50  0000 R CNN
+F 1 "100nF" H 1885 1445 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 2038 1250 50  0001 C CNN
+F 3 "~" H 2000 1400 50  0001 C CNN
+	1    2000 1400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	650  1600 650  1200
+Wire Wire Line
+	2000 1200 2000 1250
+Connection ~ 650  1600
+Wire Wire Line
+	2000 1200 650  1200
+Wire Wire Line
+	2000 1550 2000 2000
+$Comp
+L power:+5V #PWR0113
+U 1 1 61E1804A
+P 2100 1900
+F 0 "#PWR0113" H 2100 1750 50  0001 C CNN
+F 1 "+5V" H 2115 2073 50  0000 C CNN
+F 2 "" H 2100 1900 50  0001 C CNN
+F 3 "" H 2100 1900 50  0001 C CNN
+	1    2100 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 1900 2100 2000
+Wire Wire Line
+	2100 2000 2000 2000
+Connection ~ 2000 2000
+Wire Wire Line
+	2000 2000 2000 2100
+Wire Wire Line
+	650  2200 650  2100
+Connection ~ 650  2100
+Text GLabel 1600 5700 1    50   Input ~ 0
+SDCLK
+Text GLabel 1300 5700 1    50   Input ~ 0
+LCLK
+Text GLabel 1500 5700 1    50   Input ~ 0
+RESET
+Wire Wire Line
+	1200 5800 1200 5700
+Wire Wire Line
+	1200 5700 650  5700
+Wire Wire Line
+	650  5700 650  6200
+Wire Wire Line
+	650  6200 700  6200
+Wire Wire Line
+	1800 5700 1800 5800
+Wire Wire Line
+	1600 5700 1600 5800
+Wire Wire Line
+	1500 5700 1500 5800
+Wire Wire Line
+	1300 5700 1300 5800
+$Comp
+L power:GND #PWR0114
+U 1 1 61F25316
+P 650 6300
+F 0 "#PWR0114" H 650 6050 50  0001 C CNN
+F 1 "GND" H 655 6127 50  0000 C CNN
+F 2 "" H 650 6300 50  0001 C CNN
+F 3 "" H 650 6300 50  0001 C CNN
+	1    650  6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 61F2531C
+P 2000 5500
+F 0 "C6" H 1885 5454 50  0000 R CNN
+F 1 "100nF" H 1885 5545 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 2038 5350 50  0001 C CNN
+F 3 "~" H 2000 5500 50  0001 C CNN
+	1    2000 5500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	650  5700 650  5300
+Wire Wire Line
+	2000 5300 2000 5350
+Connection ~ 650  5700
+Wire Wire Line
+	2000 5300 650  5300
+Wire Wire Line
+	2000 5650 2000 6100
+$Comp
+L power:+5V #PWR0115
+U 1 1 61F25327
+P 2100 6000
+F 0 "#PWR0115" H 2100 5850 50  0001 C CNN
+F 1 "+5V" H 2115 6173 50  0000 C CNN
+F 2 "" H 2100 6000 50  0001 C CNN
+F 3 "" H 2100 6000 50  0001 C CNN
+	1    2100 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 6000 2100 6100
+Wire Wire Line
+	2100 6100 2000 6100
+Connection ~ 2000 6100
+Wire Wire Line
+	2000 6100 2000 6200
+Wire Wire Line
+	650  6300 650  6200
+Connection ~ 650  6200
+Text GLabel 6200 5700 1    50   Input ~ 0
+SDCLK
+Text GLabel 5900 5700 1    50   Input ~ 0
+LCLK
+Text GLabel 6100 5700 1    50   Input ~ 0
+RESET
+Wire Wire Line
+	5800 5800 5800 5700
+Wire Wire Line
+	5800 5700 5250 5700
+Wire Wire Line
+	5250 5700 5250 6200
+Wire Wire Line
+	5250 6200 5300 6200
+Wire Wire Line
+	6400 5700 6400 5800
+Wire Wire Line
+	6200 5700 6200 5800
+Wire Wire Line
+	6100 5700 6100 5800
+Wire Wire Line
+	5900 5700 5900 5800
+$Comp
+L power:GND #PWR0116
+U 1 1 61F6719B
+P 5250 6300
+F 0 "#PWR0116" H 5250 6050 50  0001 C CNN
+F 1 "GND" H 5255 6127 50  0000 C CNN
+F 2 "" H 5250 6300 50  0001 C CNN
+F 3 "" H 5250 6300 50  0001 C CNN
+	1    5250 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 61F671A1
+P 6600 5500
+F 0 "C4" H 6485 5454 50  0000 R CNN
+F 1 "100nF" H 6485 5545 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm" H 6638 5350 50  0001 C CNN
+F 3 "~" H 6600 5500 50  0001 C CNN
+	1    6600 5500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5250 5700 5250 5300
+Wire Wire Line
+	6600 5300 6600 5350
+Connection ~ 5250 5700
+Wire Wire Line
+	6600 5300 5250 5300
+Wire Wire Line
+	6600 5650 6600 6100
+$Comp
+L power:+5V #PWR0117
+U 1 1 61F671AC
+P 6700 6000
+F 0 "#PWR0117" H 6700 5850 50  0001 C CNN
+F 1 "+5V" H 6715 6173 50  0000 C CNN
+F 2 "" H 6700 6000 50  0001 C CNN
+F 3 "" H 6700 6000 50  0001 C CNN
+	1    6700 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 6000 6700 6100
+Wire Wire Line
+	6700 6100 6600 6100
+Connection ~ 6600 6100
+Wire Wire Line
+	6600 6100 6600 6200
+Wire Wire Line
+	5250 6300 5250 6200
+Connection ~ 5250 6200
+Text GLabel 2200 9700 2    50   Output ~ 0
+SDATA1
+Text GLabel 900  2600 3    50   Output ~ 0
+SDATA2
+Text GLabel 5500 2600 3    50   Output ~ 0
+SDATA3
+Text GLabel 900  6700 3    50   Output ~ 0
+SDATA4
+Text GLabel 5500 6700 3    50   Output ~ 0
+SDATA5
+Text GLabel 1800 1600 1    50   Input ~ 0
+SDATA1
+Text GLabel 6400 1600 1    50   Input ~ 0
+SDATA2
+Text GLabel 1800 5700 1    50   Input ~ 0
+SDATA3
+Text GLabel 6400 5700 1    50   Input ~ 0
+SDATA4
+Text GLabel 8150 950  0    50   Input ~ 0
+SDATA5
+Wire Wire Line
+	900  2500 900  2600
+Wire Wire Line
+	5500 2500 5500 2600
+Wire Wire Line
+	5500 6600 5500 6700
+Wire Wire Line
+	900  6600 900  6700
+Wire Wire Line
+	2200 9700 2100 9700
+$Comp
+L power:GND #PWR0118
+U 1 1 62117D36
+P 11500 8800
+F 0 "#PWR0118" H 11500 8550 50  0001 C CNN
+F 1 "GND" H 11505 8627 50  0000 C CNN
+F 2 "" H 11500 8800 50  0001 C CNN
+F 3 "" H 11500 8800 50  0001 C CNN
+	1    11500 8800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0119
+U 1 1 62118141
+P 12650 8550
+F 0 "#PWR0119" H 12650 8400 50  0001 C CNN
+F 1 "+5V" H 12665 8723 50  0000 C CNN
+F 2 "" H 12650 8550 50  0001 C CNN
+F 3 "" H 12650 8550 50  0001 C CNN
+	1    12650 8550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11600 8600 11500 8600
+Wire Wire Line
+	12100 8600 12650 8600
+Wire Wire Line
+	12650 8600 12650 8550
+$Comp
+L Device:R R1
+U 1 1 621F26DE
+P 11200 8700
+F 0 "R1" H 11270 8746 50  0000 L CNN
+F 1 "10K" H 11270 8655 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 11130 8700 50  0001 C CNN
+F 3 "~" H 11200 8700 50  0001 C CNN
+	1    11200 8700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0120
+U 1 1 621F2DA2
+P 11200 8900
+F 0 "#PWR0120" H 11200 8650 50  0001 C CNN
+F 1 "GND" H 11205 8727 50  0000 C CNN
+F 2 "" H 11200 8900 50  0001 C CNN
+F 3 "" H 11200 8900 50  0001 C CNN
+	1    11200 8900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11200 8550 11200 8500
+Connection ~ 11200 8500
+Wire Wire Line
+	11200 8500 11600 8500
+Wire Wire Line
+	11200 8850 11200 8900
+$Comp
+L power:GND #PWR0121
+U 1 1 62287F31
+P 10950 7000
+F 0 "#PWR0121" H 10950 6750 50  0001 C CNN
+F 1 "GND" H 10955 6827 50  0000 C CNN
+F 2 "" H 10950 7000 50  0001 C CNN
+F 3 "" H 10950 7000 50  0001 C CNN
+	1    10950 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 6228860C
+P 13000 7100
+F 0 "#PWR0122" H 13000 6850 50  0001 C CNN
+F 1 "GND" H 13005 6927 50  0000 C CNN
+F 2 "" H 13000 7100 50  0001 C CNN
+F 3 "" H 13000 7100 50  0001 C CNN
+	1    13000 7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12550 6850 13000 6850
+Wire Wire Line
+	13000 6850 13000 7100
+Wire Wire Line
+	12550 5700 13000 5700
+Wire Wire Line
+	13000 5700 13000 6850
+Connection ~ 13000 6850
+Wire Wire Line
+	11400 5700 10950 5700
+Wire Wire Line
+	10950 5700 10950 6850
+Wire Wire Line
+	11400 6850 10950 6850
+Connection ~ 10950 6850
+Wire Wire Line
+	10950 6850 10950 7000
+Wire Wire Line
+	11500 8600 11500 8700
+Wire Wire Line
+	11600 8700 11500 8700
+Connection ~ 11500 8700
+Wire Wire Line
+	11500 8700 11500 8800
+$Comp
+L power:+12V #PWR0123
+U 1 1 62498425
+P 12850 8550
+F 0 "#PWR0123" H 12850 8400 50  0001 C CNN
+F 1 "+12V" H 12865 8723 50  0000 C CNN
+F 2 "" H 12850 8550 50  0001 C CNN
+F 3 "" H 12850 8550 50  0001 C CNN
+	1    12850 8550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12100 8700 12850 8700
+Wire Wire Line
+	12850 8700 12850 8550
+$Comp
+L ts5:TS5 SW6
+U 1 1 6118AF6B
+P 12100 3450
+F 0 "SW6" H 12100 3785 50  0000 C CNN
+F 1 "TS5" H 12100 3694 50  0000 C CNN
+F 2 "TS5:TS5" H 12200 3150 50  0001 C CNN
+F 3 "" H 12200 3150 50  0001 C CNN
+	1    12100 3450
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC
