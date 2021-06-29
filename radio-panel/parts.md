@@ -8,6 +8,8 @@
 | IC ULN2803A | 1 | [Reichelt](https://www.reichelt.de/eight-darlington-arrays-dil-18-uln-2803a-p22085.html?&trstct=pos_0&nbc=1) |
 | 1N4148 diode | 4 | [Reichelt](https://www.reichelt.de/schalt-diode-100-v-150-ma-do-35-1n-4148-p1730.html?&trstct=pos_0&nbc=1) |
 | 10K resistor| 1 | [Reichelt](https://www.reichelt.de/widerstand-kohleschicht-10-kohm-0207-250-mw-5--1-4w-10k-p1338.html?search=10K+kohle) |
+| DIP 16-Socket | 5 | [Reichelt](https://www.reichelt.de/ic-sockel-16-polig-doppelter-federkontakt-gs-16-p8208.html?&nbc=1) |
+| 2x10 Socket | 1 | [Reichelt](https://www.reichelt.de/pfostenstecker-20-polig-mit-verrieglung-gerade-psl-20-p14868.html?&nbc=1) |
 
 You also need fitting knobs for the concentric encoders. Be aware that
 standard knobs wont fit beacuse of the shaft diameter. 
