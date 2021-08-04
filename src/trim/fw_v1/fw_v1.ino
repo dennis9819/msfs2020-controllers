@@ -1,14 +1,10 @@
-#include <Servo.h>
+
 #include <EEPROM.h>
 
 //DEFAULT DEVICE ID
 int dev_id = 0x0000; 
 const int dev_type = 0x00E1; // cannot be changed in EEPROM
 
-//VARS FOR SERVO
-Servo myservo;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
-double pos = 0;    // variable to store the servo position
 
 //VARS FOR ENCODER
 unsigned long lastInterruptTime = 0;
@@ -53,7 +49,6 @@ void setup() {
   //SETUP IO
   Serial.begin(115200);
   
-  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
   pinMode(PinA, INPUT_PULLUP);
   pinMode(PinB, INPUT_PULLUP);
   
@@ -80,11 +75,6 @@ void setup() {
   
   //ENABLE ENCODER INT
   attachInterrupt(digitalPinToInterrupt(PinA), isr, RISING);
-  
-  //INIT SERVO
-  myservo.write(0);
-  delay(1000); 
-  myservo.write(16);
 
   //INT DONE
   Serial.println("EV INIT_DONE");
@@ -114,9 +104,7 @@ void processFunc(String call){
 
   //process
   if (call.startsWith("S1 ")){
-      String val = call.substring(3,(call.length() - 1));
-      int val_int = map(val.toInt(),0,100,0,32);
-      myservo.write(val_int);
+
       Serial.println("+RT OK");
       return;
   }
@@ -166,6 +154,158 @@ String appendLeading(String in, int len) {
   return prefix + in;
 }
 
+int last_a0 = 0;
+int last_a1 = 0;
+int last_a2 = 0;
+int last_a3 = 0;
+int last_a4 = 0;
+
+const int numReadings = 10;
+
+int readings_A0[numReadings];      // the readings from the analog input
+int readIndex_A0 = 0;              // the index of the current reading
+int total_A0 = 0;                  // the running total
+int average_A0 = 0;                // the average
+
+int readings_A1[numReadings];      // the readings from the analog input
+int readIndex_A1 = 0;              // the index of the current reading
+int total_A1 = 0;                  // the running total
+int average_A1 = 0;                // the average
+
+int readings_A2[numReadings];      // the readings from the analog input
+int readIndex_A2 = 0;              // the index of the current reading
+int total_A2 = 0;                  // the running total
+int average_A2 = 0;                // the average
+
+int readings_A3[numReadings];      // the readings from the analog input
+int readIndex_A3 = 0;              // the index of the current reading
+int total_A3 = 0;                  // the running total
+int average_A3 = 0;                // the average
+
+int readings_A4[numReadings];      // the readings from the analog input
+int readIndex_A4 = 0;              // the index of the current reading
+int total_A4 = 0;                  // the running total
+int average_A4 = 0;                // the average
+
+void processAnalog(){
+
+  // subtract the last reading:
+  total_A0 = total_A0 - readings_A0[readIndex_A0];
+  // read from the sensor:
+  readings_A0[readIndex_A0] = analogRead(A0);
+  // add the reading to the total:
+  total_A0 = total_A0 + readings_A0[readIndex_A0];
+  // advance to the next position in the array:
+  readIndex_A0 = readIndex_A0 + 1;
+
+  // if we're at the end of the array...
+  if (readIndex_A0 >= numReadings) {
+    // ...wrap around to the beginning:
+    readIndex_A0 = 0;
+  }
+  
+  // calculate the average:
+  average_A0 = total_A0 / numReadings;
+  // send it to the computer as ASCII digits
+  if (average_A0 != last_a0){
+     last_a0 = average_A0;
+     //Serial.println("A0 " + String(average_A0)); 
+  }
+
+  // subtract the last reading:
+  total_A1 = total_A1 - readings_A1[readIndex_A1];
+  // read from the sensor:
+  readings_A1[readIndex_A1] = analogRead(A1);
+  // add the reading to the total:
+  total_A1 = total_A1 + readings_A1[readIndex_A1];
+  // advance to the next position in the array:
+  readIndex_A1 = readIndex_A1 + 1;
+
+  // if we're at the end of the array...
+  if (readIndex_A1 >= numReadings) {
+    // ...wrap around to the beginning:
+    readIndex_A1 = 0;
+  }
+  
+  // calculate the average:
+  average_A1 = total_A1 / numReadings;
+  // send it to the computer as ASCII digits
+  if (average_A1 != last_a1){
+     last_a1 = average_A1;
+     //Serial.println("A1 " + String(average_A1)); 
+  }
+
+  // subtract the last reading:
+  total_A2 = total_A2 - readings_A2[readIndex_A2];
+  // read from the sensor:
+  readings_A2[readIndex_A2] = analogRead(A2);
+  // add the reading to the total:
+  total_A2 = total_A2 + readings_A2[readIndex_A2];
+  // advance to the next position in the array:
+  readIndex_A2 = readIndex_A2 + 1;
+
+  // if we're at the end of the array...
+  if (readIndex_A2 >= numReadings) {
+    // ...wrap around to the beginning:
+    readIndex_A2 = 0;
+  }
+  
+  // calculate the average:
+  average_A2 = total_A2 / numReadings;
+  // send it to the computer as ASCII digits
+  if (average_A2 != last_a2){
+     last_a2 = average_A2;
+     //Serial.println("A2 " + String(average_A2)); 
+  }
+
+  // subtract the last reading:
+  total_A3 = total_A3 - readings_A3[readIndex_A3];
+  // read from the sensor:
+  readings_A3[readIndex_A3] = analogRead(A3);
+  // add the reading to the total:
+  total_A3 = total_A3 + readings_A3[readIndex_A3];
+  // advance to the next position in the array:
+  readIndex_A3 = readIndex_A3 + 1;
+
+ // if we're at the end of the array...
+  if (readIndex_A3 >= numReadings) {
+    // ...wrap around to the beginning:
+    readIndex_A3 = 0;
+  }
+  
+ // calculate the average:
+  average_A3 = total_A3 / numReadings;
+  // send it to the computer as ASCII digits
+  if (average_A3 != last_a3){
+     last_a3 = average_A3;
+     //Serial.println("A3 " + String(average_A3)); 
+  }
+
+  // subtract the last reading:
+  total_A4 = total_A4 - readings_A4[readIndex_A4];
+  // read from the sensor:
+  readings_A4[readIndex_A4] = analogRead(A4);
+  // add the reading to the total:
+  total_A4 = total_A4 + readings_A4[readIndex_A4];
+  // advance to the next position in the array:
+  readIndex_A4 = readIndex_A4 + 1;
+
+  // if we're at the end of the array...
+  if (readIndex_A4 >= numReadings) {
+    // ...wrap around to the beginning:
+    readIndex_A4 = 0;
+  }
+
+  // calculate the average:
+  average_A4 = total_A4 / numReadings;
+  // send it to the computer as ASCII digits
+  if (average_A4 != last_a4){
+     last_a4 = average_A4;
+     noInterrupts();
+     Serial.println("A4 " + String(average_A4)); 
+    interrupts();
+  }
+}
 
 void loop() {
    if (stringComplete) {
@@ -173,4 +313,5 @@ void loop() {
     inputString = "";
     stringComplete = false;
   }
+  processAnalog();
 }
