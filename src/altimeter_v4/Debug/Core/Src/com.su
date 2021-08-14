@@ -1,0 +1,4 @@
+com.c:17:6:heartbeatISR	24	static
+com.c:31:6:protoInit	16	static
+com.c:44:6:protoSetAlt	40	dynamic
+com.c:64:6:usb_data_rx	56	static

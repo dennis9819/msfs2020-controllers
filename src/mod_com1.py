@@ -13,7 +13,8 @@ def getbcd(val):
     return val
 
 def mod_com1_load(controllerDevice):
-   with FSUIPC() as fsuipc:
+    
+    with FSUIPC() as fsuipc:
         time.sleep(4)
         while True:
 

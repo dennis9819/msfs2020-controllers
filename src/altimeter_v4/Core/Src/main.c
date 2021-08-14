@@ -21,10 +21,26 @@
 #include "main.h"
 #include "usb_device.h"
 #include "motor.h"
+#include "com.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+void USB_DEVICE_MasterHardReset(void)
 
+
+{
+
+
+    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitStruct.Pin = GPIO_PIN_12;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_WritePin(GPIOA,GPIO_PIN_12,0);
+    HAL_Delay(1000);
+
+}
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -89,21 +105,23 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  USB_DEVICE_MasterHardReset();
   MX_USB_DEVICE_Init();
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-  homeAll();
+
+  //homeAll();
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	HAL_Delay(20);
+	HAL_Delay(200);
 	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-	//printf("loop\n");
+
 	//moveStepper(0,10);
 	//moveStepper(1,1);
 	//moveStepper(2,-5);
@@ -113,10 +131,18 @@ int main(void)
   /* USER CODE END 3 */
 }
 
+uint16_t cdc_isr_prescaler = 1600;
+uint16_t cdc_isr_timer = 0;
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	stepperServiceRoutine();
 
+	cdc_isr_timer ++;
+	if (cdc_isr_timer == cdc_isr_prescaler){
+		cdc_isr_timer = 0;
+		//heartbeatISR();
+	}
 }
 
 /**
@@ -260,15 +286,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : ENC_A_Pin ENC_B_Pin HAL_2_Pin */
-  GPIO_InitStruct.Pin = ENC_A_Pin|ENC_B_Pin|HAL_2_Pin;
+  /*Configure GPIO pins : ENC_A_Pin ENC_B_Pin  */
+  GPIO_InitStruct.Pin = ENC_A_Pin|ENC_B_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : HAL_3_Pin HAL_4_Pin HAL_1_Pin */
-  GPIO_InitStruct.Pin = HAL_3_Pin|HAL_4_Pin|HAL_1_Pin;
+  /*Configure GPIO pins : HAL_2_Pin HAL_3_Pin HAL_4_Pin HAL_1_Pin */
+  GPIO_InitStruct.Pin = HAL_3_Pin|HAL_4_Pin|HAL_1_Pin|HAL_2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

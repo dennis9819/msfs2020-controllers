@@ -1,5 +1,6 @@
 from mod_com1 import mod_com1_load
 from mod_trim import mod_load
+from mod_alt_tst import mod_alt_load
 import serial
 import time
 import _thread
@@ -40,6 +41,9 @@ class ControllerDevice:
         if self.type == 100:
             print(" -> Detected COM. Starting worker thread...")
             self.thread = _thread.start_new_thread( mod_com1_load, (self,) )
+        if self.type == 0:
+            print(" -> Detected ALT. Starting worker thread...")
+            self.thread = _thread.start_new_thread( mod_alt_load, (self,) )
 
     def testConnected(self):
         try:

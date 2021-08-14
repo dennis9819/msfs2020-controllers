@@ -1,5 +1,6 @@
 motor.c:24:6:moveStepper	16	static
-motor.c:33:6:stepperServiceRoutine	16	static
-motor.c:93:6:homeISR	16	static
-motor.c:106:6:homeAll	4	static
-motor.c:111:6:doStep	24	static
+motor.c:33:6:stepperServiceRoutine	8	static
+motor.c:43:6:doStepISR	16	static
+motor.c:98:6:homeISR	16	static
+motor.c:212:6:homeAll	8	static
+motor.c:223:6:doStep	24	static

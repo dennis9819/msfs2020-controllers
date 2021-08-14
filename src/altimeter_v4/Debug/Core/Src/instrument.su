@@ -1,0 +1,2 @@
+instrument.c:21:1:inst_set_qnh	16	static
+instrument.c:25:1:inst_set_alt	32	static

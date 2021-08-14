@@ -44,11 +44,11 @@ def mod_load(controllerDevice):
                     value = int(val[3:])
                     
                     cur = 0
-                    if value > 500:
+                    if value > 495:
                         cur = 10
-                    if value > 550:
+                    if value > 535:
                         cur = 20
-                    if value > 590:
+                    if value > 570:
                         cur = 30
                     if (cur != last_flaps):
                         if ( last_change_a4 < current_milli_time() - 150):

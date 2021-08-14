@@ -17,13 +17,16 @@
   *
   ******************************************************************************
   */
+
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
-
+#include "com.h"
 /* USER CODE BEGIN INCLUDE */
-
+static uint8_t lineCoding[7] // 115200bps, 1stop, no parity, 8bit
+    = { 0x00, 0xC2, 0x01, 0x00, 0x00, 0x00, 0x08 };
+static uint8_t host_com_port_open = 0;
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -219,15 +222,18 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
   /*******************************************************************************/
     case CDC_SET_LINE_CODING:
-
+    	memcpy(lineCoding, pbuf, sizeof(lineCoding));
     break;
 
     case CDC_GET_LINE_CODING:
-
+    	memcpy(pbuf, lineCoding, sizeof(lineCoding));
     break;
 
     case CDC_SET_CONTROL_LINE_STATE:
+    	 //USBD_SetupReqTypedef * req = (USBD_SetupReqTypedef *)pbuf;
 
+
+    	 //host_com_port_open = (req->wValue &0x0001 != 0) ? 1 : 0;
     break;
 
     case CDC_SEND_BREAK:
@@ -262,6 +268,7 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+  usb_data_rx(Buf,Len);
   return (USBD_OK);
   /* USER CODE END 6 */
 }
