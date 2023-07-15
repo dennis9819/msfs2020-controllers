@@ -5,6 +5,7 @@
  *      Author: dgunia
  */
 #include "motor.h"
+#include "com.h"
 
 int stepper_1_change = 0;
 int stepper_2_change = 0;
@@ -199,6 +200,11 @@ void homeISR(){
 	if (homing == 8){
 		//stepper2
 		if (stepper_4_change == 0){
+			uint8_t txBuf[] = "+INIT\n";
+			struct MSG msg;
+			msg.txBuf = txBuf;
+			msg.len = strlen(txBuf);
+			tx_stack_push(&msg);
 			homing = 0;
 		}else{
 			doStepISR();

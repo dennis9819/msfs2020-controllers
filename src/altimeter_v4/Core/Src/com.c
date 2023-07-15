@@ -26,18 +26,19 @@ void heartbeatISR(){
 	}
 	uint8_t txBuf[] = "-ALIVE\n";
 	CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+
 }
 
 void protoInit(){
 
 	uint8_t *txBuf = malloc(32);
 	sprintf(txBuf,"EV CONNECTED 0x%04x\n",device_type);
-	CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
-	memset(&txBuf[0], 0, sizeof(txBuf));
-
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
 	//init steppers
 	homeAll();
-
 
 }
 
@@ -49,8 +50,12 @@ void protoSetAlt(uint8_t* Buf, uint32_t *Len){
 	sscanf(number, "%d", &val);
 	inst_set_alt(val);
 
-	//uint8_t txBuf[] = "+RT OK";
-	//CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+	uint8_t txBuf[] = "+RT OK\n";
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
+
 }
 
 
@@ -90,7 +95,36 @@ void usb_data_rx(uint8_t* Buf, uint32_t *Len){
 		memset(&Buf[0], 0, *Len);
 		return;
 	}
-	uint8_t txBuf[] = "-RT INVALID_COMMAND";
-	memset(&Buf[0], 0, *Len);
-	CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+
+	uint8_t txBuf[] = "-RT INVALID_COMMAND\n";
+	struct MSG msg;
+    msg.txBuf = txBuf;
+    msg.len = strlen(txBuf);
+    tx_stack_push(&msg);
+
 }
+
+tx_stack_init(){
+	stack_max=64;
+	stack_pointer=0;
+	stack_top=0;
+}
+
+tx_stack_push(struct MSG *message){
+	uint8_t pointer = stack_top % stack_max;
+	stack[pointer] = message;
+	stack_top = (pointer + 1) % stack_max;
+}
+
+tx_stack_process(){
+	uint8_t remaining = ((stack_top + stack_max) - stack_pointer) % stack_max;
+	while (remaining > 0){
+		//send
+		struct MSG *current;
+		current = stack[stack_pointer];
+		CDC_Transmit_FS(current->txBuf, current->len);
+		stack_pointer = (stack_pointer + 1) % stack_max;
+		remaining = ((stack_top + stack_max) - stack_pointer) % stack_max;
+	}
+}
+

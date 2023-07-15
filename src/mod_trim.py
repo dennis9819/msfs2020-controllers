@@ -46,9 +46,9 @@ def mod_load(controllerDevice):
                     cur = 0
                     if value > 495:
                         cur = 10
-                    if value > 535:
+                    if value > 545:
                         cur = 20
-                    if value > 570:
+                    if value > 580:
                         cur = 30
                     if (cur != last_flaps):
                         if ( last_change_a4 < current_milli_time() - 150):

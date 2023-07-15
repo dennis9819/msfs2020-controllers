@@ -110,6 +110,7 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
+  tx_stack_init();
 
   /* USER CODE END 2 */
 
@@ -119,9 +120,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	HAL_Delay(200);
-	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-
+	tx_stack_process();
+	//HAL_Delay(2000);
+	//HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+	//heartbeatISR();
 	//moveStepper(0,10);
 	//moveStepper(1,1);
 	//moveStepper(2,-5);
@@ -141,7 +143,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 	cdc_isr_timer ++;
 	if (cdc_isr_timer == cdc_isr_prescaler){
 		cdc_isr_timer = 0;
-		//heartbeatISR();
+
 	}
 }
 
