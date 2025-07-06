@@ -12,6 +12,10 @@ const uint16_t device_type = 0x0006;
 const uint16_t device_id = 0x0000;
 uint8_t last_com_state = 0;
 
+uint8_t stack_max;
+uint8_t stack_pointer;
+uint8_t stack_top;
+int stack[64];
 
 //UNUSED
 void heartbeatISR(){
@@ -58,11 +62,28 @@ void protoSetAlt(uint8_t* Buf, uint32_t *Len){
 
 }
 
+void protoSetBaro(uint8_t* Buf, uint32_t *Len){
+	uint32_t length = *Len -7;
+	char number[length];
+	long int val;
+	memcpy( number, &Buf[6], length );
+	sscanf(number, "%d", &val);
+	inst_set_qnh(val);
+
+	uint8_t txBuf[] = "+RT OK\n";
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
+
+}
+
 
 
 
 char RESP_INIT[]	= "INIT\n";
 char RESP_ALT[]	= "S ALT";
+char RESP_BARO[]	= "S BAR";
 char RESP_IDENT[]	= "GS IDENT\n";
 char RESP_TYPE[]	= "GS TYPE\n";
 
@@ -92,6 +113,12 @@ void usb_data_rx(uint8_t* Buf, uint32_t *Len){
 	if (strncmp((const char *)Buf, RESP_ALT,5) == 0)
 	{
 		protoSetAlt(Buf,Len);
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+	if (strncmp((const char *)Buf, RESP_BARO,5) == 0)
+	{
+		protoSetBaro(Buf,Len);
 		memset(&Buf[0], 0, *Len);
 		return;
 	}

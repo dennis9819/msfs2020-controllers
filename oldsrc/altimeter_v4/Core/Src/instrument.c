@@ -13,16 +13,24 @@ long int 	INST_ALT_VAL = 0;
 long int	STEPS_100_CURR = 0;
 long int	STEPS_010_CURR = 0;
 long int	STEPS_001_CURR = 0;
+long int	STEPS_BARO_CURR = 0;
 
 const double step_calib_001 = 4.11632758333;
 const double step_calib_010 = 0.411632758333;
 const double step_calib_100 = 0.0411632758333;
+const double step_calib_baro = 34.5;
 
-inst_set_qnh(float val){
+void inst_set_qnh(long int val){
 	INST_QNH_VAL = val;
+
+	long int req_baro_value = (val - 2799) * step_calib_baro ;
+	long int movement = req_baro_value-STEPS_BARO_CURR;
+	moveStepper(1, movement);
+
+	STEPS_BARO_CURR = req_baro_value;
 }
 
-inst_set_alt(long int val){
+void inst_set_alt(long int val){
 	INST_ALT_VAL = val;
 
 

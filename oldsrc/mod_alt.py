@@ -11,20 +11,29 @@ def mod_alt_load(controllerDevice):
     ae = AircraftEvents(sm)
     last_flaps = 0
     last_change_a4 = 0
+    command_str = "S ALT %i\n"%(0)
+    print(command_str)
+    controllerDevice.serial.write(str.encode(command_str))
+    command_str = "S BAR %i\n"%(2810)
+    print(command_str)
+    controllerDevice.serial.write(str.encode(command_str))
     with FSUIPC() as fsuipc:
         controllerDevice.serial.write(b'INIT\n')
         prepared = fsuipc.prepare_data([
             (0x3324, "d"),
-            (0x3324, "d")
+            (0x3324, "d"),
+            (0x0330, "h"),
         ], True)
-        time.sleep(22)
+        time.sleep(28)
         while True:
-            alt1,alt2 = prepared.read()
-
-            command_str = "S ALT %i\n"%(alt1)
-            print(command_str)
+            alt1,alt2,baro = prepared.read()
             if alt1 > 13000:
                 continue
+            command_str = "S ALT %i\n"%(alt2 * 3.28084)
+            #print(command_str)
             controllerDevice.serial.write(str.encode(command_str))
-            time.sleep(0.5)
+            command_str = "S BAR %i\n"%((baro /16)*0.02953 * 100)
+            #print(command_str)
+            controllerDevice.serial.write(str.encode(command_str))
+            time.sleep(0.08)
             

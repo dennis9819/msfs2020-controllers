@@ -1,0 +1,10 @@
+21:31:32 **** Incremental Build of configuration Debug for project altimeter_v4 ****
+make -j12 all 
+arm-none-eabi-size   altimeter_v4.elf 
+   text	   data	    bss	    dec	    hex	filename
+  45208	    544	   6816	  52568	   cd58	altimeter_v4.elf
+Finished building: default.size.stdout
+ 
+
+21:31:32 Build Finished. 0 errors, 0 warnings. (took 321ms)
+

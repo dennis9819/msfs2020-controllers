@@ -1,6 +1,6 @@
 from mod_com1 import mod_com1_load
 from mod_trim import mod_load
-from mod_alt_tst import mod_alt_load
+from mod_alt import mod_alt_load
 import serial
 import time
 import _thread

@@ -1,0 +1,7 @@
+../Core/Src/com.c:17:6:heartbeatISR	24	static
+../Core/Src/com.c:32:6:protoInit	24	static
+../Core/Src/com.c:45:6:protoSetAlt	72	dynamic
+../Core/Src/com.c:69:6:usb_data_rx	64	static
+../Core/Src/com.c:107:1:tx_stack_init	4	static
+../Core/Src/com.c:113:1:tx_stack_push	24	static
+../Core/Src/com.c:119:1:tx_stack_process	16	static

@@ -1,0 +1,158 @@
+/*
+ * com.c
+ *
+ *  Created on: 4 Aug 2021
+ *      Author: dgunia
+ */
+
+#include "com.h"
+#include "instrument.h"
+
+const uint16_t device_type = 0x0006;
+const uint16_t device_id = 0x0000;
+uint8_t last_com_state = 0;
+
+uint8_t stack_max;
+uint8_t stack_pointer;
+uint8_t stack_top;
+int stack[64];
+
+//UNUSED
+void heartbeatISR(){
+	if (host_com_port_open != last_com_state){
+		last_com_state = host_com_port_open;
+		if (host_com_port_open == 0){
+			//closed
+		}else if (host_com_port_open == 1){
+			uint8_t txBuf[] = "-HELLO\n";
+			CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+		}
+	}
+	uint8_t txBuf[] = "-ALIVE\n";
+	CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+
+}
+
+void protoInit(){
+
+	uint8_t *txBuf = malloc(32);
+	sprintf(txBuf,"EV CONNECTED 0x%04x\n",device_type);
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
+	//init steppers
+	homeAll();
+
+}
+
+void protoSetAlt(uint8_t* Buf, uint32_t *Len){
+	uint32_t length = *Len -7;
+	char number[length];
+	long int val;
+	memcpy( number, &Buf[6], length );
+	sscanf(number, "%d", &val);
+	inst_set_alt(val);
+
+	uint8_t txBuf[] = "+RT OK\n";
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
+
+}
+
+void protoSetBaro(uint8_t* Buf, uint32_t *Len){
+	uint32_t length = *Len -7;
+	char number[length];
+	float val;
+	memcpy( number, &Buf[6], length );
+	sscanf(number, "%d", &val);
+	inst_set_qnh(val);
+
+	uint8_t txBuf[] = "+RT OK\n";
+	struct MSG msg;
+	msg.txBuf = txBuf;
+	msg.len = strlen(txBuf);
+	tx_stack_push(&msg);
+
+}
+
+
+
+
+char RESP_INIT[]	= "INIT\n";
+char RESP_ALT[]	= "S ALT";
+char RESP_BARO[]	= "S BAR";
+char RESP_IDENT[]	= "GS IDENT\n";
+char RESP_TYPE[]	= "GS TYPE\n";
+
+void usb_data_rx(uint8_t* Buf, uint32_t *Len){
+	sprintf(&Buf);
+	if (strcmp((const char *)Buf, RESP_INIT) == 0)
+	{
+		protoInit();
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+	if (strcmp((const char *)Buf, RESP_IDENT) == 0)
+	{
+		uint8_t *txBuf = malloc(32);
+		sprintf(txBuf,"+0x%04x\n+RT OK\n",0);
+		CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+	if (strcmp((const char *)Buf, RESP_TYPE) == 0)
+	{
+		uint8_t *txBuf = malloc(32);
+		sprintf(txBuf,"+0x%04x\n+RT OK\n",device_type);
+		CDC_Transmit_FS((uint8_t*)txBuf, strlen(txBuf));
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+	if (strncmp((const char *)Buf, RESP_ALT,5) == 0)
+	{
+		protoSetAlt(Buf,Len);
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+	if (strncmp((const char *)Buf, RESP_BARO,5) == 0)
+	{
+		protoSetBaro(Buf,Len);
+		memset(&Buf[0], 0, *Len);
+		return;
+	}
+
+	uint8_t txBuf[] = "-RT INVALID_COMMAND\n";
+	struct MSG msg;
+    msg.txBuf = txBuf;
+    msg.len = strlen(txBuf);
+    tx_stack_push(&msg);
+
+}
+
+tx_stack_init(){
+	stack_max=64;
+	stack_pointer=0;
+	stack_top=0;
+}
+
+tx_stack_push(struct MSG *message){
+	uint8_t pointer = stack_top % stack_max;
+	stack[pointer] = message;
+	stack_top = (pointer + 1) % stack_max;
+}
+
+tx_stack_process(){
+	uint8_t remaining = ((stack_top + stack_max) - stack_pointer) % stack_max;
+	while (remaining > 0){
+		//send
+		struct MSG *current;
+		current = stack[stack_pointer];
+		CDC_Transmit_FS(current->txBuf, current->len);
+		stack_pointer = (stack_pointer + 1) % stack_max;
+		remaining = ((stack_top + stack_max) - stack_pointer) % stack_max;
+	}
+}
+

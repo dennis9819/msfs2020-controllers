@@ -1,0 +1,6 @@
+../Core/Src/motor.c:25:6:moveStepper	5
+../Core/Src/motor.c:34:6:stepperServiceRoutine	2
+../Core/Src/motor.c:44:6:doStepISR	17
+../Core/Src/motor.c:99:6:homeISR	25
+../Core/Src/motor.c:218:6:homeAll	1
+../Core/Src/motor.c:229:6:doStep	9

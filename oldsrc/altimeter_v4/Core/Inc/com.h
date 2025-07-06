@@ -19,10 +19,10 @@ struct MSG {
 	uint32_t *len;
 };
 
-uint8_t stack_max;
-uint8_t stack_pointer;
-uint8_t stack_top;
-int stack[64];
+extern uint8_t stack_max;
+extern uint8_t stack_pointer;
+extern uint8_t stack_top;
+extern int stack[64];
 void tx_stack_init();
 void tx_stack_push(struct MSG *message);
 void usb_data_rx(uint8_t* Buf, uint32_t *Len);
